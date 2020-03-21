@@ -7,6 +7,8 @@
 #                                           | |
 #                                           |_|                                             
 
+# https://www.terraform.io/docs/providers/rancher2/index.html
+
 provider "rancher2" {
   
   alias = "bootstrap"
@@ -15,6 +17,8 @@ provider "rancher2" {
   bootstrap = true
   
 }
+
+# https://www.terraform.io/docs/providers/random/r/password.html
 
 resource "random_password" "admin-password" {
   
@@ -30,6 +34,19 @@ resource "random_password" "admin-password" {
   min_special = 3
   
 }
+
+# https://www.terraform.io/docs/providers/aws/r/s3_bucket.html
+
+resource "aws_s3_bucket_object" "admin-password-txt" {
+
+  bucket  = var.bucket_name
+  key     = "/${var.name}/admin-password.txt"
+  content = random_password.admin-password.result
+  content_type = "text/*"
+
+}
+
+# https://www.terraform.io/docs/providers/rancher2/r/bootstrap.html
 
 resource "rancher2_bootstrap" "admin" {
   

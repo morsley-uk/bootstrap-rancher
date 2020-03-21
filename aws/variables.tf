@@ -15,9 +15,9 @@ variable "region" {
   default = "eu-west-2" # London
 }
 
-//variable "name" {
-//  default = "rancher"
-//}
+variable "name" {
+  default = "rancher"
+}
 
 variable "bucket_name" {
   default = "morsley-io"
