@@ -11,7 +11,7 @@ provider "rancher2" {
   
   alias = "bootstrap"
   
-  api_url   = "rancher.morsley.io"
+  api_url   = "https://rancher.morsley.io"
   bootstrap = true
   
 }
@@ -33,9 +33,9 @@ resource "random_password" "admin-password" {
 
 resource "rancher2_bootstrap" "admin" {
   
-  provider = "rancher2.bootstrap"
+  provider = rancher2.bootstrap
   
-  password = random_password.admin-password
+  password = random_password.admin-password.result
   telemetry = true
   
 }
