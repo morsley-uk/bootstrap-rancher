@@ -56,3 +56,12 @@ resource "rancher2_bootstrap" "admin" {
   telemetry = true
   
 }
+
+resource "aws_s3_bucket_object" "admin-token" {
+
+  bucket  = var.bucket_name
+  key     = "/${var.name}/admin-token.txt"
+  content = rancher2_bootstrap.admin.token
+  content_type = "text/*"
+
+}

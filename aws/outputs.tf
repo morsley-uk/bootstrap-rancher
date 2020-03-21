@@ -12,3 +12,9 @@ output "admin_password" {
   value = random_password.admin-password.result
 
 }
+
+output "access_key" {
+
+  value = rancher2_bootstrap.admin.token
+
+}
