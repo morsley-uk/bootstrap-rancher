@@ -1,1 +1,9 @@
+# JetBrains Rider...
 .idea
+
+# Terrafrom...
+.terraform
+*.tfstate*
+*.tfstate.backup
+*.tfvars
+terraform-provider*

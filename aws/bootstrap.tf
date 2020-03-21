@@ -39,9 +39,3 @@ resource "rancher2_bootstrap" "admin" {
   telemetry = true
   
 }
-
-output "admin_password" {
-  
-  value = random_password.admin-password
-  
-}
