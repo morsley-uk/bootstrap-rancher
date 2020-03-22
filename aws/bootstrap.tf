@@ -40,7 +40,7 @@ resource "random_password" "admin-password" {
 resource "aws_s3_bucket_object" "admin-password-txt" {
 
   bucket  = var.bucket_name
-  key     = "/${var.name}/admin-password.txt"
+  key     = "/${var.name}/admin_password.txt"
   content = random_password.admin-password.result
   content_type = "text/*"
 
@@ -60,7 +60,7 @@ resource "rancher2_bootstrap" "admin" {
 resource "aws_s3_bucket_object" "admin-token" {
 
   bucket  = var.bucket_name
-  key     = "/${var.name}/admin-token.txt"
+  key     = "/${var.name}/admin_token.txt"
   content = rancher2_bootstrap.admin.token
   content_type = "text/*"
 
