@@ -1,4 +1,4 @@
-﻿#   __      __        _       _     _           
+#   __      __        _       _     _           
 #   \ \    / /       (_)     | |   | |          
 #    \ \  / /_ _ _ __ _  __ _| |__ | | ___  ___ 
 #     \ \/ / _` | '__| |/ _` | '_ \| |/ _ \/ __|
@@ -19,6 +19,9 @@ variable "name" {
   default = "rancher"
 }
 
-variable "bucket_name" {
-  default = "morsley-io"
+variable "domain" {
+  default = "morsley.io"
+}
+variable "subdomain" {
+  default = "rancher"
 }
