@@ -18,3 +18,9 @@ output "access_key" {
   value = rancher2_bootstrap.admin.token
 
 }
+
+output "admin_url" {
+
+  value = rancher2_bootstrap.admin.url
+
+}
