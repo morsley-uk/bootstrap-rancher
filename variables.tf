@@ -15,8 +15,8 @@ variable "region" {
   default = "eu-west-2" # London
 }
 
-variable "name" {
-  default = "rancher"
+variable "cluster_name" {
+  default = "rancher-k8s"
 }
 
 variable "domain" {
