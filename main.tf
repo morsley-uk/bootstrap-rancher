@@ -18,7 +18,7 @@ provider "rancher2" {
   api_url   = "https://${var.subdomain}.${var.domain}"
   bootstrap = true
 
-  allow_insecure_ssl = true # This can be romoved when Let's Encrypt is fully working
+  insecure = true # This can be romoved when Let's Encrypt is fully working
   
 }
 
